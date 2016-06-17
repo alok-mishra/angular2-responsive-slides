@@ -1,0 +1,99 @@
+@black: #000;
+@white: #fff;
+@orange: #F26522;
+@hover-grey: #6C6C6C;
+@dark-grey: #1A1A1A;
+@arrow-size: 14px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+
+    background: @black;
+
+    margin: 0; padding: 0;
+
+    .wrap { border: 1px solid #000; margin: 0 auto; overflow: hidden; }
+
+    .slides {
+        // position: relative;
+        background: #000;
+        // max-width: 714px; max-height: 524px;
+        img {
+            // position: absolute;
+            // max-width: 714px; max-height: 524px;
+
+            display: block;
+
+            @media screen and (orientation:portrait) {
+                width: 100vw;
+            }
+
+            // @media screen and (max-aspect-ratio: 714 / 524) {
+            @media screen and (max-aspect-ratio: 850 / 675) {
+                width: 100vw;
+            }
+
+            @media screen and (orientation:landscape) and (min-aspect-ratio: 850 / 675) {
+                height: calc(~"100vh - 90px");
+                margin: 0 auto;
+            }
+
+            transition: .2s linear all;
+            opacity: 1;
+
+            // &.ng-hide-remove { transition: opacity 2s ease-in; }
+            // &.ng-hide-remove-active { opacity: 0; }
+            // &.ng-hide { opacity: 0; }
+            &.ng-hide { opacity: 0; }
+            &.ng-hide-add { display: none; }
+        }
+    }
+
+
+    .buttons {
+       background: #000; overflow: hidden;
+       margin: 0 auto;
+
+       .wrap {
+           width: 280px;
+        }
+
+       .button {
+            float: right; cursor: pointer;
+            background: @dark-grey;
+            margin: 4px 20px; padding: 10px 40px;
+
+            .arrow {
+                width: 0; right: 0; border: 0px;
+                border-top: @arrow-size solid transparent; border-bottom: @arrow-size solid transparent;
+
+                // background: transparent;
+                // border-right: 0;
+                // text-indent: -6666px;
+
+                &.left { border-right: @arrow-size+2 solid @orange; }
+                &.right { border-left: @arrow-size+2 solid @orange; }
+            }
+
+            &:active {
+                .arrow { border-left-color: @hover-grey; border-right-color: @hover-grey; }
+            }
+        }
+        &.slide0 .button {
+             // cursor: default;
+            .arrow { border-right-color: #333; }
+        }
+        &.last .button {
+
+             // cursor: default;
+            .arrow { border-left-color: #333; }
+        }
+    }
+
+}

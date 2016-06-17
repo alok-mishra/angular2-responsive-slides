@@ -1,6 +1,16 @@
-[
-  "Edsger Dijkstra",
-  "Donald Knuth",
-  "Alan Turing",
-  "Grace Hopper"
-]
+{
+    "title": "Responsive Slides",
+    "prefix": "",
+    "images": [
+        "1000",
+        "2000",
+        "3000",
+        "4000",
+        "5000",
+        "6000"
+    ],
+    "audio": [
+        "2000",
+        "6000"
+    ]
+}
